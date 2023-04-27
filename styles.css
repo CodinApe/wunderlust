@@ -1,0 +1,358 @@
+/*Seth Preble*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+#skip {
+	position:absolute;
+	left:-10000px;
+	top:auto;
+	width:1px;
+	height:1px;
+	overflow:hidden;
+}
+
+#skip:focus{
+	position: static;
+	width: auto;
+	height: auto;
+}
+
+.sr-only{
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap; /* added line */
+	border: 0; 
+}
+
+
+header {
+	background-image: linear-gradient(to bottom, blue, white, white, white);
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+}
+
+header a {
+	grid-column: 1/2;
+}
+
+header h1 {
+	grid-column: 1/3;
+	grid-row: 2/3;
+}
+
+header p {
+	grid-column: 1/3;
+	grid-row: 3/4;
+}
+
+#toggle {
+	margin-right: 20px;
+	margin-top: 40px;
+}
+
+label {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    user-select: none;
+}
+
+header label {
+	background-color: #F6D64A;
+}
+
+header input {
+    display: none;
+}
+
+header input ~ ul {
+	overflow: hidden;
+	max-height: 0;
+    transition: max-height .2s ease-out;
+    background-color: #7ABFBF;
+    margin-top: 30px;
+	text-align: center;
+}
+
+input:checked ~ ul {
+    min-height: 400px;
+    overflow: visible;
+	position: absolute;
+	margin-left: -50%;
+	width: 100%;
+	grid-column: 1/3;
+
+}
+
+
+input:checked ~ label {
+	position: absolute;
+	margin-left: -50%;
+	width: 100%;
+	text-align: center;
+	background-color: black;
+	color: white;
+}
+
+#main_content {
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+#img-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	align-items: center;
+	row-gap: 10px;
+}
+
+#img-grid img {
+	width: 100%;
+}
+
+#plan {
+	background-color: #F6D64A;
+	padding-bottom: 1rem;
+}
+
+#plan div {
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+#plan div section {
+	display: grid;
+	grid-template-columns: 1fr;
+	align-items: center;
+	background-color: #55BCD5;
+	margin: 20px;
+	border-radius: 1rem;
+	border-style: solid;
+	border-width: 5px;
+	border-color: white;
+	
+}
+
+#plan div section a, #plan div section h4{
+	margin: 0 auto;
+	padding: 15px;
+}
+
+
+#testimonials section{
+	text-align: center;
+}
+
+
+#about {
+	background-color: #499BD2;
+}
+
+#about div{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+#about div section img {
+	width: 100%;
+	height: auto;
+	max-height: 80px;
+}
+
+#contact {
+	display: flex;
+}
+
+input, label, textarea {
+	display: block;
+}
+
+footer {
+	display: grid;
+	text-align: center;
+
+}
+
+
+@media screen and (min-width: 600px) {
+	header input, header label {
+		display: none;
+	}
+
+	header {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr 1fr;
+	}
+
+	header input ~ ul {
+		overflow: visible;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		gap: 5rem;
+	}
+
+	header nav {
+		grid-row: 2/3;
+		grid-column: 1/5;	
+	}
+
+	header a{
+		grid-template-rows: 1/3;
+	}
+
+	header h1 {
+		grid-column: 2/5;
+		grid-row: 1/2;
+	}
+	
+	header p {
+		grid-column: 2/5;
+		grid-row: 2/3;
+	}
+
+
+	#about div {
+		display: flex;
+		justify-content: center;
+		gap: 2rem;
+	}
+
+	#about div section img{
+		
+
+	}
+
+	#plan div {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+	}
+
+	#testimonials div {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	fieldset {
+		display: flex;
+	}
+
+	.radio-input {
+		margin-right: 10px;
+	}
+
+	#img-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	picture {
+		grid-column: 1/3;
+	}
+	
+
+}
+
+
+@media screen and (min-width: 950px) {
+
+	#intro {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	}
+
+	#intro h2, #intro p {
+		grid-column: 1/3;
+	}
+
+	header nav {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
+	#img-grid {
+		grid-column: 3/6;
+	}
+
+	#plan div section a img {
+		width: 100%;
+		height: auto;
+	}
+
+	#plan div {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-rows: 1fr;
+	}
+
+	#testimonials div{
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+
+	#contact {
+		display: block;
+	}
+
+	form {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+
+	#nums {
+		grid-column: 2/3;
+	}
+
+}
