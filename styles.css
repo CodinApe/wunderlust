@@ -76,12 +76,24 @@ table {
 	border: 0; 
 }
 
+header p, #contact, #plan div, #contact, #intro, #testimonials, #plan h3{
+	max-width: 90%;
+	margin: 0 auto;
+}
+
 h1 {
-	font-size: 70px;
+	margin-top: 15px;
+	margin-left: 25px;
+	font-size: 65px;
+}
+
+h2 {
+	margin-top: 15px;
 }
 
 h2, h3 {
 	font-size: 40px;
+	margin-bottom: 1rem;
 }
 
 h1, h2, h3 {
@@ -89,39 +101,28 @@ h1, h2, h3 {
 	padding-left: 20px;
 }
 
-h4, p, q, small, nav, button, form {
+h4, p, q, small, nav, button, form, footer a {
 	font-family: 'Montserrat', sans-serif;
 }
 
-h4 {
+h4, label {
 	text-transform: uppercase;
 	font-weight: bold;
+	font-size: 25px;
 }
 
-#plan h4 {
-	font-size: 30px;
-}
 
 p {
-	font-size: 24px;
+	font-size: 20px;
 	padding-left: 20px;
 }
 
-q {
-	font-style: italic;
-	quotes: "“" "”";
-}
-
-q::before {
-	content: open-quote;
-}
-  
-q::after {
-	content: close-quote;
+footer p, footer a {
+	font-size:15px;
 }
 
 header {
-	background-image: linear-gradient(to bottom, blue, white, white, white);
+	background-image: linear-gradient(to bottom, #55BCD5, white);
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr 1fr 1fr;
@@ -138,19 +139,26 @@ nav {
 	grid-column: 1/3;
 }
 
+a {
+	margin-top: 15px;
+	text-decoration: none;
+	color: black;
+}
+
+a:visited {
+	color: black;
+}
+
 header h1 {
 	grid-column: 1/3;
 	grid-row: 2/3;
 }
 
 header p {
+	margin-left: 25px;
+	line-height: 2.5rem;
 	grid-column: 1/3;
 	grid-row: 3/4;
-}
-
-#toggle {
-	margin-right: 20px;
-	margin-top: 40px;
 }
 
 label {
@@ -161,9 +169,10 @@ label {
 }
 
 header label {
+	font-size: 20px;
 	position: absolute;
 	right: 0;
-	top: 20px;
+	top: 35px;
 	width: 100px;
 	background-color: #F6D64A;
 	padding: 20px 40px;
@@ -178,7 +187,6 @@ header input ~ ul {
 	overflow: hidden;
 	max-height: 0;
     transition: max-height .2s ease-out;
-    background-color: #7ABFBF;
     margin-top: 30px;
 	text-align: center;
 }
@@ -191,17 +199,37 @@ input:checked ~ ul {
 	left: 0;
 	top: 30px;
 }
+ 
+li {
+	font-weight: bold;
+	text-align: center;
+	font-size: 16px;
+	text-transform: uppercase;
+	background-color: #55BCD5;
+	border: 2px solid black;
+	padding: 30px;
+	margin-bottom: 0px;
+}
+
+.active {
+	background-color: #F6D64A;
+}
 
 input:checked ~ label {
-	width: 100%;
+	width: 88%;
 	top: 0;
 	background-color: black;
 	color: white;
 }
 
 #intro {
-	margin-top: 80px;
+	margin-top: 4rem;
 	padding-bottom: 20px;
+}
+
+#intro p {
+	line-height: 2rem;
+	margin-bottom: 2rem;
 }
 
 #main_content {
@@ -214,6 +242,7 @@ input:checked ~ label {
 	grid-template-columns: 1fr;
 	align-items: center;
 	row-gap: 10px;
+	column-gap: 10px;
 }
 
 #img-grid img {
@@ -253,45 +282,192 @@ input:checked ~ label {
 	padding: 30px 0px;
 }
 
+#testimonials h3 {
+	font-size: 40px;
+}
+
+#testimonials p {
+	font-size: 20px;
+}
 
 #testimonials section{
 	text-align: center;
 }
 
+q {
+	font-size: 20px;
+	font-style: italic;
+	quotes: "“" "”";
+}
+
+q::before {
+	content: open-quote;
+}
+  
+q::after {
+	content: close-quote;
+}
+
 
 #about {
 	background-color: #499BD2;
-	padding: 30px 0px;
+	padding: 30px 20px;
+	margin-bottom: 2rem;
 }
 
 #about div{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+	text-align: center;
+}
+
+#about div p {
+	padding-left: 0px;
 }
 
 #about div section img {
 	width: 100%;
 	height: auto;
 	max-height: 80px;
+	min-height: 20px;
 }
 
 #contact {
-	display: grid;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	max-width: 800px;
 	justify-content: center;
 }
 
-input, label, textarea {
+.form-required {
+	font-size: 18px;
+	font-weight: normal;
+	font-style: italic;
+	font-family: 'Montserrat', sans-serif;
+}
+
+label, legend {
+	font-size: 20px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+fieldset label {
+	font-weight: normal;
+	text-transform: capitalize;
+}
+
+input, label {
 	display: block;
 }
 
-#contact h2 {
+input, select {
+	border: 2px solid #9B26B0;
+}
+
+input, select {
+	padding: 20px;
+	margin-bottom:20px;
+}
+
+input {
+	width: 91%;
+}
+
+select {
+	appearance: none;
+}
+
+/* select arrow altering*/
+.custom-select {
+		width: 100%;
+		border: 1px solid var(--select-border);
+		border-radius: 0.25em;
+		font-size: 1.25rem;
+		cursor: pointer;
+		line-height: 1.1;
+		background-color: #fff;
+		background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+		display: grid;
+		grid-template-areas: "select";
+		align-items: center;
+  }
+
+  .custom-select::after {
+	content: "";
+	width: 1em;
+	height: 1em;
+	background-color: #9B26B0;
+	clip-path: polygon(52% 94%, 90% 20%, 100% 15%, 55% 100%, 49% 100%, 0 16%, 10% 20%);
+	justify-self: end;
+	margin-bottom: 18px;
+	margin-right: 10px;
+}
+
+  select, .custom-select::after {
+	grid-area: select;
+  }
+
+
+form {
+	width: 90%;
+	margin: 0 auto;
+}
+
+fieldset {
+	margin-bottom: 15px;
+}
+
+.radio-label {
+	margin-top: 15px;
+}
+
+.radio-input {
 	display: inline-block;
+	margin-right: 20px;
+	justify-content: center;
+	text-align: center;
+}
+
+fieldset label {
+	display: flex;
+	gap: 5px;
+	margin-right: 40px;
+
+}
+
+input[type="radio"] {
+	appearance: none;
+  	background-color: #fff;
+ 	
+  	width: 1.15em;
+  	height: 1.15em;
+  	border: 0.25em solid #9B26B0;
+  	border-radius: 50%;
+}
+
+input[type="radio"]:checked {
+	background-image: radial-gradient(#9B26B0 50%, white 50%);
+}
+
+input[type="submit"] {
+	border: none;
+	background-color: #9B26B0;
+	color: white;
+	margin: 0 auto;
+}
+
+.required {
+	color: #9B26B0;
 }
 
 footer {
+	margin-top: 25px;
+	padding-top: 8px;
 	display: grid;
 	text-align: center;
-
+	background-color: #EAEAEA;
 }
 
 
@@ -301,53 +477,69 @@ footer {
 	}
 
 	header {
+		padding-top: 10px;
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 		grid-template-rows: 1fr 1fr 1fr;
+		padding-bottom: 30px;
 	}
 
 	header input ~ ul {
 		overflow: visible;
 		text-align: center;
 		display: flex;
+		flex-direction: row;
 		justify-content: center;
-		gap: 5rem;
+		gap: 2%;
+		margin-top: 4rem;
 	}
+
+	li {
+		width: 200px;
+		border: none;
+		background-color: white;
+		color: black;
+		padding: 20px 18px 35px 18px;
+	}
+
+	nav {
+		margin: 0 auto;
+		width: 90%;
+	}
+
+	a {
+		text-decoration: none;
+		color: black;
+	}
+	
+	a:visited {
+		color: black;
+	}
+
 
 	header nav {
 		grid-row: 2/3;
 		grid-column: 1/5;	
 	}
 
-	header a{
-		grid-template-rows: 1/3;
-	}
-
 	header h1 {
+		margin-top: 25px;
+		margin-left: -25px;
 		grid-column: 2/5;
 		grid-row: 1/2;
 	}
 	
 	header p {
+		margin-top: -20px;
+		margin-left: -25px;
 		grid-column: 2/5;
 		grid-row: 2/3;
-	}
-
-
-	#about div {
-		display: flex;
-		justify-content: center;
-		gap: 2rem;
-	}
-
-	#about div section img{
-		
-
 	}
 
 	#plan div {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 1fr 1fr;
+		margin: 0 auto;
 	}
 
 	#testimonials div {
@@ -370,8 +562,44 @@ footer {
 	picture {
 		grid-column: 1/3;
 	}
+
+	input[type="submit"] {
+		width: 44%;
+		margin-right: 0;
+	}
+
+	a {
+		margin-top: 4px;
+	}
+
+	footer {
+		padding-bottom: 30px;
+	}
+
+	footer p {
+		position: absolute;
+		left: 0;
+	}
+
+	footer a:nth-child(2) {
+		position: absolute;
+		right: 150px;
+	}
+	footer a:nth-child(3) {
+		position: absolute;
+		right: 0;
+	}
+	
 	
 
+}
+
+@media screen and (min-width:820px) {
+	#about div {
+		display: flex;
+		justify-content: center;
+		gap: 2rem;
+	}
 }
 
 
@@ -380,16 +608,46 @@ footer {
 	#intro {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+		margin-top: 0px;
 	}
 
 	#intro h2, #intro p {
 		grid-column: 1/3;
 	}
 
+	header {
+		margin-bottom: -50px;
+	}
+
 	header nav {
 		position: absolute;
 		top: 0;
 		right: 0;
+	}
+
+	header input ~ ul {
+		position: absolute;
+		margin-top: 0;
+		right: 0;
+		top: 0;
+	}
+
+	header h1 {
+		position: absolute;
+		top: 30px;
+		left: 235px;
+	}
+
+	header p {
+		position: absolute;
+		top: 140px;
+		left: 235px;
+	}
+
+	li {
+		font-size: 12px;
+		width: 115px;
+		padding: 15px 15px 20px 15px;
 	}
 
 	#img-grid {
@@ -411,16 +669,23 @@ footer {
 	}
 
 	#contact {
+		max-width: 1400px;
 		display: block;
+	}
+
+	#nums {
+		width: 90%;
+		margin-left: 10px;
 	}
 
 	form {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
+		column-gap: 2rem;
+		width: 93%;
 	}
 
 	#nums {
 		grid-column: 2/3;
 	}
-
 }
